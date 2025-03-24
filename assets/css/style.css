@@ -405,40 +405,37 @@ section {
 /*--------------------------------------------------------------
 # Akills
 --------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
-  display: block;
-  background: none;
-  border-radius: 0;
+/* ############################################ */
+
+
+
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 0;
+}
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  /* max-width: 900px; */
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.skills-container img {
+  height: 50px;
+  transition: transform 0.3s ease-in-out;
+}
+.skills-container img:hover {
+  transform: scale(1.1);
 }
 
-.skills .progress .skill {
-  padding: 7px;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 600;
-  font-size: 17px;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
-}
 
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
-}
-
-.skills .progress-bar-wrap {
-  background: #dce8f8;
-  height: 10px;
-}
-
-.skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: .9s;
-  background-color: #149ddd;
-}
 
 /*--------------------------------------------------------------
 # Resume
@@ -1095,4 +1092,86 @@ section {
     width: auto;
     padding-right: 20px 15px;
   }
+}
+
+/* 
+****************************************************
+Projects section
+**************************************************** */
+
+.portfolio {
+  padding: 60px 0;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.section-title h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Projects Wrapper */
+.projects-wrapper {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+}
+
+.projects-container {
+  display: flex;
+  gap: 20px;
+  scroll-snap-align: start;
+}
+
+.projects-wrapper::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+/* Project Card */
+.project-card {
+  flex: 0 0 300px;
+  scroll-snap-align: center;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+/* Auto-scroll effect */
+@keyframes scrollProjects {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.projects-wrapper {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+.projects-container {
+  display: flex;
+  animation: scrollProjects 15s linear infinite alternate; /* Adjust speed */
 }
