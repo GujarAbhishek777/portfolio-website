@@ -1164,7 +1164,7 @@ Projects section
 /* Auto-scroll effect */
 @keyframes scrollProjects {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-10%); }
+  100% { transform: translateX(-50%); }
 }
 .projects-wrapper {
   display: flex;
@@ -1173,5 +1173,5 @@ Projects section
 }
 .projects-container {
   display: flex;
-  animation: scrollProjects 2s linear infinite alternate; /* Adjust speed */
+  animation: scrollProjects 5s linear infinite alternate; /* Adjust speed */
 }
