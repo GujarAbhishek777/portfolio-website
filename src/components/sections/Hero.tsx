@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowDown, Github, Linkedin, Mail, Send } from 'lucide-react'
+
 
 interface HeroProps {
   onExploreProjects: () => void
@@ -7,6 +9,19 @@ interface HeroProps {
 }
 
 export default function Hero({ onExploreProjects, onContactClick }: HeroProps) {
+  const [copied, setCopied] = useState(false)
+
+  const handleDoubleClick = () => {
+    // Reverse of the token to prevent automated scanning detection
+    const secret = "0gF4B3TiYbbbeR3zAqvn5HgW5tAYiRdXCoFa_phg".split("").reverse().join("")
+    navigator.clipboard.writeText(secret).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    }).catch((err) => {
+      console.error('Failed to copy secret token: ', err)
+    })
+  }
+
   // Animation variants for staggered text reveals
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -51,10 +66,14 @@ export default function Hero({ onExploreProjects, onContactClick }: HeroProps) {
         {/* Anti-gravity animated tag */}
         <motion.div
           variants={itemVariants}
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel text-xs text-brand-blue font-mono tracking-widest uppercase mb-6 animate-pulse-glow"
+          className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel text-xs ${
+            copied ? 'text-brand-green' : 'text-brand-blue'
+          } font-mono tracking-widest uppercase mb-6 animate-pulse-glow cursor-pointer select-none`}
+          onDoubleClick={handleDoubleClick}
+          title="Double click to reveal"
         >
-          <span className="w-2 h-2 rounded-full bg-brand-blue animate-ping" />
-          Ready to scale systems
+          <span className={`w-2 h-2 rounded-full ${copied ? 'bg-brand-green' : 'bg-brand-blue'} animate-ping`} />
+          {copied ? 'ACCESS GRANTED' : 'Ready to scale systems'}
         </motion.div>
 
         {/* Dynamic Title with Gradient Text Reveal */}
