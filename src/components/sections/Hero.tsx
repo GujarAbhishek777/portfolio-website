@@ -40,7 +40,7 @@ export default function Hero({ onExploreProjects, onContactClick }: HeroProps) {
 
   return (
     <section className="relative w-full min-h-screen flex flex-col justify-center items-center px-6 md:px-12 lg:px-24 overflow-hidden z-10">
-      
+
       {/* Immersive Text/UI overlay */}
       <motion.div
         variants={containerVariants}
@@ -49,7 +49,7 @@ export default function Hero({ onExploreProjects, onContactClick }: HeroProps) {
         className="max-w-4xl text-center md:text-left flex flex-col items-center md:items-start"
       >
         {/* Anti-gravity animated tag */}
-        <motion.div 
+        <motion.div
           variants={itemVariants}
           className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel text-xs text-brand-blue font-mono tracking-widest uppercase mb-6 animate-pulse-glow"
         >
@@ -58,7 +58,7 @@ export default function Hero({ onExploreProjects, onContactClick }: HeroProps) {
         </motion.div>
 
         {/* Dynamic Title with Gradient Text Reveal */}
-        <motion.h1 
+        <motion.h1
           variants={itemVariants}
           className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-4 select-none leading-none"
         >
@@ -67,15 +67,15 @@ export default function Hero({ onExploreProjects, onContactClick }: HeroProps) {
         </motion.h1>
 
         {/* Dynamic subheadline detailing role */}
-        <motion.p 
+        <motion.p
           variants={itemVariants}
           className="text-lg md:text-2xl text-gray-300 font-light tracking-wide max-w-2xl mb-8 leading-relaxed text-center md:text-left"
         >
-          High-performance Full Stack Software Engineer specializing in scalable web ecosystems, optimized cloud deployments, and interactive 3D frontends.
+          Hi, I'm <span className="text-brand-blue font-medium text-glow-blue">Abhishek Gujar</span>. A high-performance Full Stack Software Engineer specializing in scalable web ecosystems, optimized cloud deployments, and interactive frontends.
         </motion.p>
 
         {/* Glassmorphic card previewing key highlights */}
-        <motion.div 
+        <motion.div
           variants={itemVariants}
           className="glass-panel p-6 rounded-2xl max-w-xl mb-10 text-gray-400 text-sm md:text-base border-dark-border text-center md:text-left"
         >
@@ -86,7 +86,7 @@ export default function Hero({ onExploreProjects, onContactClick }: HeroProps) {
         </motion.div>
 
         {/* CTAs and social action nodes */}
-        <motion.div 
+        <motion.div
           variants={itemVariants}
           className="flex flex-col sm:flex-row gap-4 items-center"
         >
@@ -127,7 +127,7 @@ export default function Hero({ onExploreProjects, onContactClick }: HeroProps) {
       </motion.div>
 
       {/* Floating Animated scroll indicator at the bottom */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 1 }}

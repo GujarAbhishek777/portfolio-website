@@ -254,6 +254,52 @@ export default function About() {
           
           {/* Left panel: Info summary and dynamic interactive skills showcase */}
           <div className="flex flex-col justify-between space-y-6 text-left">
+            {/* Profile Card Header */}
+            <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start glass-panel p-6 rounded-2xl border-white/5 relative overflow-hidden group">
+              {/* Decorative radial overlay */}
+              <div className="absolute top-0 right-0 w-[150px] h-[150px] bg-brand-purple/10 rounded-full filter blur-[40px] pointer-events-none" />
+              
+              {/* Photo Frame with glowing border */}
+              <div className="relative shrink-0">
+                <div className="absolute -inset-1 bg-gradient-to-tr from-brand-blue via-brand-purple to-brand-pink rounded-2xl filter blur-[6px] opacity-75 group-hover:opacity-100 transition-opacity duration-500 animate-pulse-glow" />
+                <div className="relative w-32 h-32 rounded-2xl overflow-hidden border border-white/10 group-hover:border-brand-blue/30 transition-all duration-500">
+                  <img 
+                    src="/assets/img/profile_upload.png" 
+                    alt="Abhishek Gujar" 
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </div>
+              
+              {/* Profile Details */}
+              <div className="flex-grow flex flex-col justify-center space-y-3 text-center sm:text-left h-full pt-1">
+                <div>
+                  <h3 className="text-2xl font-black text-white tracking-tight">
+                    Abhishek Gujar
+                  </h3>
+                  <p className="text-sm font-mono text-brand-blue mt-1 font-semibold uppercase tracking-wider">
+                    Full Stack Software Engineer
+                  </p>
+                </div>
+                
+                {/* Location & Contact Badges */}
+                <div className="flex flex-wrap justify-center sm:justify-start gap-2 pt-1">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-mono bg-white/5 border border-white/10 px-2.5 py-1 rounded-lg text-gray-300">
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-green" />
+                    📍 Mumbai, India
+                  </span>
+                  <a 
+                    href="mailto:gujarabhishek777@gmail.com"
+                    className="inline-flex items-center gap-1.5 text-xs font-mono bg-white/5 hover:bg-white/10 border border-white/10 hover:border-brand-blue/30 px-2.5 py-1 rounded-lg text-gray-300 hover:text-brand-blue transition-all"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-blue animate-pulse" />
+                    ✉️ Email Me
+                  </a>
+                </div>
+              </div>
+            </div>
+
             <div className="space-y-4 text-gray-300 leading-relaxed">
               <p className="text-lg">
                 Experienced Full Stack Developer with a strong track record in optimizing database performance,
