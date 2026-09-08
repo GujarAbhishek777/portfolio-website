@@ -108,6 +108,14 @@ const MOCK_EDUCATION: Education[] = [
     period: '06/2016 - 05/2018',
     score: 'Percentage: 89.85%',
   },
+  {
+    id: 'edu-3',
+    degree: 'Secondary (X)',
+    school: 'New English School',
+    location: 'Satara, Maharashtra',
+    period: '06/2015 - 05/2016',
+    score: 'Percentage: 97.80%',
+  },
 ];
 
 const MOCK_SKILLS: SkillGroup[] = [
