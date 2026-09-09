@@ -39,11 +39,19 @@ export interface SkillGroup {
 const MOCK_PROJECTS: Project[] = [
   {
     id: '1',
+    title: 'Spark',
+    description: 'Its Application where Developers can connect with each other',
+    url: 'https://spark.scalewithabhi.in/',
+    image: '/assets/img/portfolio/Project4.png',
+    tech: ['React', 'Node.js', 'MongoDB', 'TailwindCSS'],
+  },
+  {
+    id: '1',
     title: 'TaskFlow',
     description: 'A scalable task management system with real-time updates and collaborative workspaces.',
     url: 'https://taskflow.scalewithabhi.in/',
     image: '/assets/img/portfolio/Project1.png',
-    tech: ['React', 'Node.js', 'MongoDB', 'TailwindCSS'],
+    tech: ['React', 'Ruby On Rails', 'MySQL', 'TailwindCSS'],
   },
   {
     id: '2',
