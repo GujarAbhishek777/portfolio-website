@@ -35,6 +35,17 @@ export interface SkillGroup {
   skills: { name: string; icon: string }[];
 }
 
+export interface Certificate {
+  id: string;
+  title: string;
+  issuer: string;
+  description: string;
+  specification: string;
+  image: string;
+  skills: string[];
+  issueDate?: string;
+}
+
 // Fallback data reflecting the original portfolio contents
 const MOCK_PROJECTS: Project[] = [
   {
@@ -160,6 +171,49 @@ const MOCK_SKILLS: SkillGroup[] = [
   },
 ];
 
+const MOCK_CERTIFICATES: Certificate[] = [
+  {
+    id: 'cert-1',
+    title: 'Namaste React',
+    issuer: 'NamasteDev (Akshay Saini)',
+    description: 'Mastered production-ready React application architecture, deep diving into React Fiber reconciliation, custom hooks, Redux Toolkit, performance optimization, and SSR.',
+    specification: 'React.js, JSX Architecture, Custom Hooks, Redux Toolkit, Virtual DOM, Code Splitting, and Web Performance Optimization.',
+    image: '/assets/Certificate/NamsteReactCertificate.png',
+    skills: ['React.js', 'Redux Toolkit', 'React Fiber', 'Custom Hooks', 'Web Performance'],
+    issueDate: '2025',
+  },
+  {
+    id: 'cert-2',
+    title: 'Namaste Node.js',
+    issuer: 'NamasteDev (Akshay Saini)',
+    description: 'Advanced Backend Engineering certification focusing on Node.js runtime, asynchronous event-driven architecture, database integration, and microservices.',
+    specification: 'Node.js Event Loop, Libuv Thread Pool, Buffers & Streams, Express.js Middleware, RESTful API design, and Async I/O scaling.',
+    image: '/assets/Certificate/NamasteNodeJS.jpg',
+    skills: ['Node.js', 'Express.js', 'Event Loop & Libuv', 'Streams & Buffers', 'RESTful APIs'],
+    issueDate: '2025',
+  },
+  {
+    id: 'cert-3',
+    title: 'Namaste JavaScript',
+    issuer: 'NamasteDev (Akshay Saini)',
+    description: 'In-depth mastery of core JavaScript fundamentals, V8 engine execution pipeline, asynchronous patterns, closures, and modern ES6+ paradigms.',
+    specification: 'Execution Context, Scope Chain, Closures, Prototypal Inheritance, Event Loop, Promises, Async/Await, and V8 Engine optimization.',
+    image: '/assets/Certificate/NamasteJavascript.jpg',
+    skills: ['JavaScript (ES6+)', 'Async JS & Promises', 'Closures & Scopes', 'V8 Engine Internals'],
+    issueDate: '2025',
+  },
+  {
+    id: 'cert-4',
+    title: 'Namaste AI',
+    issuer: 'NamasteDev (Akshay Saini)',
+    description: 'Cutting-edge certification in Generative AI engineering, Large Language Model (LLM) integration, prompt optimization, and AI application development.',
+    specification: 'LLMs Architecture, Prompt Engineering, Vector Databases, Retrieval-Augmented Generation (RAG), OpenAI API, and AI Agent Workflows.',
+    image: '/assets/Certificate/NamsteAI.png',
+    skills: ['Generative AI', 'LLMs & Prompting', 'RAG Architecture', 'Vector Databases', 'AI Integration'],
+    issueDate: '2026',
+  },
+];
+
 export async function fetchProjects(): Promise<Project[]> {
   if (!API_BASE_URL) return MOCK_PROJECTS;
   try {
@@ -169,6 +223,18 @@ export async function fetchProjects(): Promise<Project[]> {
   } catch (error) {
     console.warn('Falling back to static Projects data', error);
     return MOCK_PROJECTS;
+  }
+}
+
+export async function fetchCertificates(): Promise<Certificate[]> {
+  if (!API_BASE_URL) return MOCK_CERTIFICATES;
+  try {
+    const res = await fetch(`${API_BASE_URL}/certificates`);
+    if (!res.ok) throw new Error('API failure');
+    return await res.json();
+  } catch (error) {
+    console.warn('Falling back to static Certificates data', error);
+    return MOCK_CERTIFICATES;
   }
 }
 

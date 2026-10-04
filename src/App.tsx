@@ -4,6 +4,7 @@ import HeroCanvas from './components/canvas/HeroCanvas'
 import Hero from './components/sections/Hero'
 import About from './components/sections/About'
 import Projects from './components/sections/Projects'
+import Certificates from './components/sections/Certificates'
 import Content from './components/sections/Content'
 import Contact from './components/sections/Contact'
 
@@ -21,7 +22,7 @@ export default function App() {
 
   // Active Section Scroll Spy utilizing IntersectionObserver
   useEffect(() => {
-    const sections = ['hero', 'about', 'projects', 'content', 'contact']
+    const sections = ['hero', 'about', 'projects', 'certificates', 'content', 'contact']
     
     const observerOptions = {
       root: null,
@@ -72,6 +73,7 @@ export default function App() {
       <main className="w-full relative">
         <About />
         <Projects />
+        <Certificates />
         <Content />
         <Contact />
       </main>

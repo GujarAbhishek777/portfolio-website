@@ -14,6 +14,7 @@ export default function Navbar({ activeSection, onNavClick }: NavbarProps) {
     { id: 'hero', name: 'Home' },
     { id: 'about', name: 'About' },
     { id: 'projects', name: 'Projects' },
+    { id: 'certificates', name: 'Certificates' },
     { id: 'content', name: 'Content' },
     { id: 'contact', name: 'Contact' },
   ]

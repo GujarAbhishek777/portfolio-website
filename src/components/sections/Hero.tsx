@@ -101,7 +101,7 @@ export default function Hero({ onExploreProjects, onContactClick }: HeroProps) {
           <p className="font-mono text-xs text-brand-purple uppercase tracking-wider mb-2">
             🚀 Core Competencies
           </p>
-          React/Next.js • Ruby on Rails • MySQL • Docker & Kubernetes • AWS Serverless SAM
+          React/Next.js • Node.js • Ruby on Rails • MongoDB & MySQL • Docker & Kubernetes • AWS Serverless SAM
         </motion.div>
 
         {/* CTAs and social action nodes */}

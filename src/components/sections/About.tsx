@@ -139,10 +139,13 @@ function SkillSystem({ activeSkill, onSelectSkill }: SkillSystemProps) {
   // Tilted 3D orbital planes configuration
   const nodes: Omit<NodeProps, 'activeSkill' | 'onSelectSkill'>[] = [
     { angle: 0, radius: 1.6, speed: 0.3, label: 'React', color: '#61dafb', rotation: [0.4, 0.2, 0.1] },
-    { angle: (2 * Math.PI) / 5, radius: 1.7, speed: 0.25, label: 'Ruby on Rails', color: '#cc0000', rotation: [-0.4, 0.5, -0.2] },
-    { angle: (4 * Math.PI) / 5, radius: 1.8, speed: 0.28, label: 'Cloudflare', color: '#f38020', rotation: [0.2, -0.6, 0.3] },
-    { angle: (6 * Math.PI) / 5, radius: 1.9, speed: 0.32, label: 'MySql', color: '#00758f', rotation: [-0.2, -0.3, -0.4] },
-    { angle: (8 * Math.PI) / 5, radius: 2.0, speed: 0.22, label: 'AWS', color: '#ff9900', rotation: [0.5, -0.1, -0.5] },
+    { angle: Math.PI / 4, radius: 1.8, speed: 0.26, label: 'Node.js', color: '#68a063', rotation: [-0.3, 0.4, 0.2] },
+    { angle: (2 * Math.PI) / 4, radius: 1.7, speed: 0.25, label: 'Ruby on Rails', color: '#cc0000', rotation: [-0.4, 0.5, -0.2] },
+    { angle: (3 * Math.PI) / 4, radius: 1.9, speed: 0.29, label: 'Docker', color: '#2496ed', rotation: [0.3, -0.4, -0.3] },
+    { angle: Math.PI, radius: 1.8, speed: 0.28, label: 'Cloudflare', color: '#f38020', rotation: [0.2, -0.6, 0.3] },
+    { angle: (5 * Math.PI) / 4, radius: 2.0, speed: 0.31, label: 'MongoDB', color: '#47a248', rotation: [-0.4, 0.2, 0.4] },
+    { angle: (6 * Math.PI) / 4, radius: 1.9, speed: 0.32, label: 'MySql', color: '#00758f', rotation: [-0.2, -0.3, -0.4] },
+    { angle: (7 * Math.PI) / 4, radius: 2.1, speed: 0.22, label: 'AWS', color: '#ff9900', rotation: [0.5, -0.1, -0.5] },
   ]
 
   return (
@@ -184,6 +187,16 @@ const SKILL_DETAILS: Record<string, { title: string; desc: string; highlights: s
     ],
     accent: '#61dafb',
   },
+  'Node.js': {
+    title: 'Node.js & Asynchronous Systems',
+    desc: 'Building high-throughput REST APIs, microservices, non-blocking I/O event loops, and backend integrations.',
+    highlights: [
+      'Developed high-concurrency event-driven microservices using Node.js and Express.',
+      'Implemented RESTful API endpoints, middleware pipelines, and JWT authentication.',
+      'Optimized asynchronous I/O and stream processing for high throughput data pipelines.',
+    ],
+    accent: '#68a063',
+  },
   'Ruby on Rails': {
     title: 'Ruby on Rails Backend Ecosystem',
     desc: 'Strong knowledge of Rails API setups, queue architectures (Sidekiq), database indexing, and Rails 8 configuration.',
@@ -194,6 +207,16 @@ const SKILL_DETAILS: Record<string, { title: string; desc: string; highlights: s
     ],
     accent: '#cc0000',
   },
+  Docker: {
+    title: 'Docker Containerization & Deployment',
+    desc: 'Containerizing web applications, multi-stage Docker builds, Docker Compose orchestration, and reproducible environments.',
+    highlights: [
+      'Created multi-stage Dockerfiles for optimized production builds and minimal image footprints.',
+      'Orchestrated multi-container development & staging environments using Docker Compose.',
+      'Streamlined CI/CD deployment workflows with containerized app execution.',
+    ],
+    accent: '#2496ed',
+  },
   Cloudflare: {
     title: 'Cloudflare Network Optimizations',
     desc: 'Setting up SSL certificates, caching rules, edge proxy configs, and access controls.',
@@ -203,6 +226,16 @@ const SKILL_DETAILS: Record<string, { title: string; desc: string; highlights: s
       'Configured network WAF firewall policies shielding assets.',
     ],
     accent: '#f38020',
+  },
+  MongoDB: {
+    title: 'MongoDB NoSQL Database Architecture',
+    desc: 'Schema design, indexing strategies, aggregation pipelines, and document store management.',
+    highlights: [
+      'Designed flexible NoSQL document schemas for high-velocity application development.',
+      'Utilized complex aggregation pipelines for real-time analytics and data aggregation.',
+      'Optimized query performance through compound indexing and efficient data modeling.',
+    ],
+    accent: '#47a248',
   },
   MySql: {
     title: 'MySQL Relational Database Tuning',
